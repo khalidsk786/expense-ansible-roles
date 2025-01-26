@@ -31,7 +31,7 @@
       path: /app
   - name: copy backend service
     ansible.builtin.copy:
-      src: backend.service.j2
+      src: backend.service
       dest: /etc/systemd/system/backend.service
 
   - name: install python libraries
