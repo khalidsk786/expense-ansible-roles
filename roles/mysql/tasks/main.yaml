@@ -21,12 +21,14 @@
   community.mysql.mysql_info:
     login_user: root
     login_password: "{{ mysql_root_password }}"
-    login_host: mysql.khalidaws82.tech
+    #login_host: mysql.khalidaws82.tech # this is the host name
+    login_host: "{{ mysql_hosts }}" # this is the host name from the vars file
   register: mysql_info
   ignore_errors: true #ignore the error out put
-- name: print the output
-  ansible.builtin.debug:
-    msg: "mysql info: {{ mysql_info }}"
+  
+#- name: print the output # print the output
+ # ansible.builtin.debug: # debug module
+   # msg: "mysql info: {{ mysql_info }}" # print the output
     
 # to set root password
 - name: setup root password
