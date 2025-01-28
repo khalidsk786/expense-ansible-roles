@@ -20,7 +20,7 @@
 - name: connect to mysqlserver
   community.mysql.mysql_info:
     login_user: root
-    login_password: "{{ lookup('amazon.aws.aws_ssm', '/expense/mysql/mysql_root_password', decrypt=T ) }}" # this is the password from the ssm
+    login_password: "{{ lookup('amazon.aws.aws_ssm', '/expense/mysql/mysql_root_password', decrypt=True) }}" # this is the password from the ssm
     # login_password: "{{ mysql_root_password }}"
     #login_host: mysql.khalidaws82.tech # this is the host name
     login_host: "{{ mysql_hosts }}" # this is the host name from the vars file
